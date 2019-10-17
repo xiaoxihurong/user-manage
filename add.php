@@ -39,11 +39,7 @@ function add_user() {
 
   $avatar = substr($target, 2);
 
-  // var_dump($name);
-  // var_dump($gender);
-  // var_dump($birthday);
-  // var_dump($avatar);
-  // 保存
+  
 
   // 1. 建立连接
   $conn = mysqli_connect('localhost', 'root', '123456', 'test');
@@ -53,7 +49,6 @@ function add_user() {
     return;
   }
 
-  // var_dump("insert into users values (null, '{$name}', {$gender}, '{$birthday}', '{$avatar}');");
   // 2. 开始查询
   $query = mysqli_query($conn, "insert into users values (null, '{$name}', {$gender}, '{$birthday}', '{$avatar}');");
 
@@ -69,9 +64,10 @@ function add_user() {
     return;
   }
 
-  // 响应
   header('Location: index.php');
 }
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   add_user();
@@ -82,13 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>XXX管理系统</title>
+  <title>管理系统</title>
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">XXX管理系统</a>
+    <a class="navbar-brand" href="#">管理系统</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.html">用户管理</a>

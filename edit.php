@@ -1,6 +1,5 @@
 <?php
 
-// 接收要修改的数据 ID
 if (empty($_GET['id'])) {
   exit('<h1>必须传入指定参数</h1>');
 }
@@ -15,7 +14,6 @@ if (!$conn) {
 }
 
 // 2. 开始查询
-// 因为 ID 是唯一的 那么找到第一个满足条件的就不用再继续了 limit 1
 $query = mysqli_query($conn, "select * from users where id = {$id} limit 1;");
 
 if (!$query) {
@@ -65,8 +63,7 @@ function edit () {
     $user['avatar'] = substr($target, 2);
   }
 
-  // $user => 修改过后的信息
-  // TODO: 将数据更新回数据库
+
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -78,13 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>XXX管理系统</title>
+  <title>管理系统</title>
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">XXX管理系统</a>
+    <a class="navbar-brand" href="#">管理系统</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.html">用户管理</a>

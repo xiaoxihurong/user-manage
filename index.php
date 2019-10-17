@@ -14,23 +14,19 @@ if (!$query) {
   exit('<h1>查询数据失败</h1>');
 }
 
-// 3. 遍历结果集
-// while ($item = mysqli_fetch_assoc($query)) {
-//   $data[] = $item;
-// }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>XXX管理系统</title>
+  <title>管理系统</title>
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">XXX管理系统</a>
+    <a class="navbar-brand" href="#">管理系统</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.html">用户管理</a>
